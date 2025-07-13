@@ -15,7 +15,7 @@ export default async ({ req, res, log, error }) => {
     process.env.COLLECTION_ID,
     data.$id,
   );
-  console.log(user);
+  log(user);
   try {
     const response = await users.list();
     // Log messages and errors to the Appwrite Console
