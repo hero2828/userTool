@@ -21,8 +21,8 @@ export default async ({ req, res, log, error }: any) => {
 
   try {
     const user = await databases.getDocument(
-      Bun.env["DATABASE_ID"],
-      Bun.env["COLLECTION_ID"],
+      process.env.DB_ID,
+      process.env.COLLECTION_ID,
       data.$id,
     );
 
