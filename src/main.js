@@ -15,6 +15,7 @@ export default async ({ req, res, log, error }) => {
     process.env.COLLECTION_ID,
     '68736ae40021628b43ef',
   );
+  log("user.id",user.name)
   log(user);
   try {
     const response = await users.list();
