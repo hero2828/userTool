@@ -10,13 +10,13 @@ export default async ({ req, res, log, error }) => {
     .setKey(req.headers['x-appwrite-key'] ?? '');
   const users = new Users(client);
  const db = new Databases(client);
+    log("user.id"+68736b7b000d34921434)
   const user = await db.getDocument(
     process.env.DB_ID,
     process.env.COLLECTION_ID,
-    '68736ae40021628b43ef',
+    '68736b7b000d34921434',
   );
-  log("user.id",user.name)
-  log(user);
+
   try {
     const response = await users.list();
     // Log messages and errors to the Appwrite Console
