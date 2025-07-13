@@ -13,7 +13,7 @@ export default async ({ req, res, log, error }) => {
   const user = await db.getDocument(
     process.env.DB_ID,
     process.env.COLLECTION_ID,
-    data.$id,
+    '68736ae40021628b43ef',
   );
   log(user);
   try {
