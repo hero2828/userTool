@@ -16,7 +16,7 @@ export default async ({ req, res, log, error }: any) => {
     .setKey(req.headers["x-appwrite-key"] ?? "");
   const users = new Users(client);
   const databases = new Databases(client);
-
+ log('00000')
   const data: RequestBody = req.bodyJson;
 
   try {
