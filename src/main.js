@@ -9,7 +9,13 @@ export default async ({ req, res, log, error }) => {
     .setProject(process.env.APPWRITE_FUNCTION_PROJECT_ID)
     .setKey(req.headers['x-appwrite-key'] ?? '');
   const users = new Users(client);
-
+ const db = new Databases(client);
+  const user = await db.getDocument(
+    process.env.DB_ID,
+    process.env.COLLECTION_ID,
+    data.$id,
+  );
+  console.log(user);
   try {
     const response = await users.list();
     // Log messages and errors to the Appwrite Console
